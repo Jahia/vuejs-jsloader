@@ -1,14 +1,24 @@
 const path = require('path');
 const { VueLoaderPlugin } = require('vue-loader');
+let nodeExternals = require('webpack-node-externals');
 
 module.exports = {
     entry: {
-        main: path.resolve(__dirname, 'src/main/javascript/index.js')
+        'vuejs': [
+            './src/main/javascript/app/main.js'
+        ]
     },
     output: {
-        path: path.resolve(__dirname, 'src/main/resources/javascript/apps/'),
-        filename: 'vueApp.js'
+        path: path.resolve(__dirname, 'src/main/resources/javascript/bundles/'),
+        filename: "[name].js",
+        libraryTarget: "amd",
+        library: "[name]_[hash]"
     },
+
+    externals: [
+        nodeExternals( { importType:'amd'})
+    ],
+
     module: {
         rules: [
             {
@@ -32,5 +42,6 @@ module.exports = {
     },
     plugins: [
         new VueLoaderPlugin()
-    ]
+    ],
+    devtool: 'source-map'
 };

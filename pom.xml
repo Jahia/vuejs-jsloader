@@ -61,6 +61,10 @@
     <packaging>bundle</packaging>
     <description>This is the custom module (vuejs-jsloader) for running on a Digital Experience Manager server.</description>
 
+    <properties>
+        <jahia-depends>javascript-loader</jahia-depends>
+    </properties>
+
     <scm>
         <connection>scm:dummy:uri</connection>
         <developerConnection>scm:dummy:uri</developerConnection>

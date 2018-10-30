@@ -17,5 +17,14 @@
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 <%--@elvariable id="workspace" type="java.lang.String"--%>
 
+<jahia-npm-resource name="@jahia/vuejs-jsloader"></jahia-npm-resource>
+<%--<jahia-npm-resource name="vue" version="^2.0.0" ></jahia-npm-resource>--%>
+
+<script>
+    Promise.all([System.import('@jahia/vuejs-jsloader/app/main')]).then(function (m) {
+        console.log(m);
+    })
+</script>
+
 <div id="app"></div>
-<script src="${pageContext.request.contextPath}/modules/vuejs-jsloader/javascript/apps/vueApp.js" ></script>
+<%--<script src="${pageContext.request.contextPath}/modules/vuejs-jsloader/javascript/bundles/vuejs.js" ></script>--%>
