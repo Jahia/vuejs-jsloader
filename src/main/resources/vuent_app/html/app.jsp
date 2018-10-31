@@ -25,4 +25,6 @@
     })
 </script>
 
-<div id="app"></div>
+<div id="app">
+    <my-component></my-component>
+</div>

@@ -12,7 +12,8 @@ let config = {
             "vue",
             "vue-router",
             "vue-style-loader",
-            "vue-template-compiler"
+            "vue-template-compiler",
+            "lodash"
         ]
     },
 
