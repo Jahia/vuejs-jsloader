@@ -111,13 +111,13 @@
                         </goals>
                     </execution>
                     <execution>
-                        <id>webpack</id>
-                        <phase>prepare-package</phase>
+                        <id>yarn run</id>
+                        <phase>generate-resources</phase>
                         <goals>
-                            <goal>webpack</goal>
+                            <goal>yarn</goal>
                         </goals>
                         <configuration>
-                            <arguments>${webpack.arguments}</arguments>
+                            <arguments>build</arguments>
                         </configuration>
                     </execution>
                 </executions>
