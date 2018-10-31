@@ -1,4 +1,4 @@
-"bundle";var define = System.amdDefine;define("vuejs_9b82d296a93db1da683a", ["lodash","vue"], function(__WEBPACK_EXTERNAL_MODULE_lodash__, __WEBPACK_EXTERNAL_MODULE_vue__) { return /******/ (function(modules) { // webpackBootstrap
+"bundle";var define = System.amdDefine;define("vuejs_a6523c01ddbbe0636ad2", ["lodash","vue"], function(__WEBPACK_EXTERNAL_MODULE_lodash__, __WEBPACK_EXTERNAL_MODULE_vue__) { return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -103,12 +103,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function () {
     return {
-      message: lodash__WEBPACK_IMPORTED_MODULE_0___default.a.toLower("This Is Lower Case Lodash Right HERE!!!")
+      message: lodash__WEBPACK_IMPORTED_MODULE_0___default.a.toLower("Enjoy the View (pun intended)"),
+      styles: {
+        display: "flex",
+        alignContent: "center",
+        flexDirection: "column",
+        color: "#888",
+        width: "100%",
+        height: "250px",
+        backgroundImage: "url('/modules/vuejs-jsloader/img/snow.jpg')",
+        backgroundPosition: "center",
+        backgroundPepeat: "no-repeat",
+        backgroundSize: "cover",
+        justifyContent: "center",
+        alignItems: "center"
+      }
     };
   }
 });
@@ -130,17 +143,11 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("h1", [_vm._v("This is my app")]),
-      _vm._v(" "),
-      _c("p", [_vm._v(_vm._s(_vm.message))]),
-      _vm._v(" "),
-      _c("my-component")
-    ],
-    1
-  )
+  return _c("div", { style: _vm.styles }, [
+    _c("h1", [_vm._v("Experimental app with DX, VueJS and Javascript Loader")]),
+    _vm._v(" "),
+    _c("p", [_vm._v(_vm._s(_vm.message))])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -388,4 +395,4 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_vue__;
 
 /******/ })});;
 //# sourceMappingURL=vuejs.js.map
-System.registerDynamic('@jahia/vuejs-jsloader@1.0.0/app/main.js', ['vuejs_9b82d296a93db1da683a'], true, function(require,exports,module) { module.exports=require('vuejs_9b82d296a93db1da683a')['/Users/alexanderkarmanov/Documents/Jahia/vuejs-jsloader/src/main/javascript/app/main.js']; }); 
+System.registerDynamic('@jahia/vuejs-jsloader@1.0.0/app/main.js', ['vuejs_a6523c01ddbbe0636ad2'], true, function(require,exports,module) { module.exports=require('vuejs_a6523c01ddbbe0636ad2')['/Users/alexanderkarmanov/Documents/Jahia/vuejs-jsloader/src/main/javascript/app/main.js']; }); 
