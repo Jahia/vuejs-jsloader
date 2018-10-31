@@ -1,11 +1,12 @@
+const SystemJSPlugin = require('webpack-systemjs-bundle-plugin/');
 const path = require('path');
 const { VueLoaderPlugin } = require('vue-loader');
 let nodeExternals = require('webpack-node-externals');
 
-module.exports = {
+const config = {
     entry: {
         'vuejs': [
-            './src/main/javascript/app/main.js'
+            path.resolve(__dirname, 'src/main/javascript/app/main.js')
         ]
     },
     output: {
@@ -35,13 +36,22 @@ module.exports = {
         ]
     },
     resolve: {
+        mainFields: ["module", "main", "browser"],
         alias: {
             'vue$': 'vue/dist/vue.esm.js'
         },
         extensions: ['*', '.js', '.vue', '.json']
     },
     plugins: [
-        new VueLoaderPlugin()
+        new VueLoaderPlugin(),
+        new SystemJSPlugin({
+            path: path.resolve(__dirname + "/src/main/resources/javascript/bundles/[name].config.json"),
+            name: "[name]_[hash]"
+        })
     ],
+
+    mode: "development",
     devtool: 'source-map'
 };
+
+module.exports = [config];

@@ -8,7 +8,11 @@ let config = {
     // same dependency twice
     entry: {
         "vendor-bundle": [
+            "css-loader",
             "vue",
+            "vue-router",
+            "vue-style-loader",
+            "vue-template-compiler"
         ]
     },
 
@@ -22,7 +26,7 @@ let config = {
     },
 
     resolve:{
-        mainFields:["browser","main"]
+       mainFields:["browser","main"]
     },
     plugins: [
         new SystemJSPlugin({
@@ -32,11 +36,11 @@ let config = {
         new webpack.DefinePlugin({
             PRODUCTION: JSON.stringify(true),
         }),
-        new UglifyJsPlugin({
-            parallel: true,
-            sourceMap: true,
-            uglifyOptions: { ecma: 8 }
-        })
+        // new UglifyJsPlugin({
+        //     parallel: true,
+        //     sourceMap: true,
+        //     uglifyOptions: { ecma: 8 }
+        // })
     ],
 
     devtool: 'source-map'
